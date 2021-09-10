@@ -1,0 +1,14 @@
+---
+- hosts: web
+  tasks:
+    - name: Install lamp
+      become: yes
+      apt:
+        name: "{{ packages}}"
+        state: present
+      vars:
+        packages:
+            - apache2
+            - mysql-server
+            - php  
+
